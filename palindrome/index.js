@@ -21,12 +21,18 @@
 // 	return false;
 // }
 
+// function palindrome(str) {
+// 	let reversedStr = str
+// 		.split('')
+// 		.reduce((reversed, character) => character + reversed, '');
+
+// 	return str === reversedStr;
+// }
+
 function palindrome(str) {
-	let reversedStr = str
-		.split('')
-		.reduce((reversed, character) => character + reversed, '');
-	if (str === reversedStr) return true;
-	return false;
+	return str.split('').every((char, index) => {
+		return char === str[str.length - index - 1];
+	});
 }
 
 module.exports = palindrome;
