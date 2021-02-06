@@ -59,7 +59,7 @@ function anagramsTwo(stringA, stringB) {
 
 	return true;
 }
-
+//helper function
 function buildCharMap(str) {
 	const charMap = {};
 	for (let char of str.replace(/[^\w]/g, '').toLowercase()) {
@@ -67,5 +67,16 @@ function buildCharMap(str) {
 	}
 	return charMap;
 }
+
+//solution 3
+function anagramsThree(stringA, stringB) {
+	return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+	return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+
+console.log(anagramsThree('rail safetyt', 'fairy talest'));
 
 module.exports = anagrams;
