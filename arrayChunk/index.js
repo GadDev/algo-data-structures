@@ -31,11 +31,21 @@ function chunckTwo(array, size) {
 			chunked.push([element]);
 		} else {
 			last.push(element);
+	
 		}
 	}
 	return chunked;
 }
-
+console.log(chunckTwo([1, 2, 3, 4], 2));
 //alternative solution 2 
+function chunkThree(array, size ) {
+	const chunked = []
+	let index = 0;
 
+	while(index < array.length) {
+		chunked.push(array.slice(index, index + size));
+		index += size;
+	}
+	return chunked
+}
 module.exports = chunk;
